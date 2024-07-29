@@ -1,0 +1,81 @@
+### Eventos
+### GetAll
+GET http://localhost:3001/eventos
+
+### GetById
+GET http://localhost:3001/eventos/{{eventoId}}
+
+### Create
+# @name criarEvento
+POST http://localhost:3001/eventos
+Content-Type: application/json
+
+{
+  "nome": "Arvore 2020",
+  "descricao": "Rave.",
+  "data": "2023-09-15 10:00:00",
+  "preco": 120
+}
+
+### Updat
+PATCH http://localhost:3001/eventos/{{eventoId}}
+Content-Type: application/json
+
+{
+  "nome": "Baoba 2222",
+  "descricao": "Rave.",
+  "data": "2022-09-15 : 16:00:00",
+  "preco": 120
+}
+
+### Delete
+DELETE http://localhost:3001/eventos/{{eventoId}}
+
+###
+@eventoId = {{ criarEvento.response.body.id }}
+
+
+### Lugares
+### GetAll
+GET http://localhost:3001/eventos/{{eventoId}}/lugares
+
+### GetById
+GET http://localhost:3001/eventos/{{eventoId}}/lugares/{{lugarId}}
+
+### Create
+# @name criarLugar
+POST http://localhost:3001/eventos/{{eventoId}}/lugares
+Content-Type: application/json
+
+{
+  "nome": "A2"
+}
+
+### Update
+PATCH  http://localhost:3001/eventos/{{eventoId}}/lugares/{{lugarId}}
+Content-Type: application/json
+
+{
+  "nome": "A1"
+}
+
+### Delete
+DELETE http://localhost:3001/eventos/{{eventoId}}/lugares/{{lugarId}}
+
+@lugarId = {{ criarLugar.response.body.id }}
+@lugarNome = {{ criarLugar.response.body.name }}
+
+
+
+### Reservar
+### Create
+
+POST http://localhost:3001/eventos/{{eventoId}}/reservar
+Content-Type: application/json
+X-Api-Token: 321
+
+{
+  "lugares": ["{{lugarNome}}"],
+  "tipo_ingresso": "inteira",
+  "email": "user1@test.com"
+}

@@ -1,0 +1,80 @@
+### EVENTS
+### GetAll
+GET http://localhost:3000/events
+
+### GetById
+GET http://localhost:3000/events/{{eventId}}
+
+### Create
+# @name createEvent
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+  "name": "Ultra 2020",
+  "description": "Rave.",
+  "date": "2023-09-15 10:00:00",
+  "price": 120
+}
+
+### Update
+PATCH http://localhost:3000/events/{{eventId}}
+Content-Type: application/json
+
+{
+  "name": "Baoba 2222",
+  "description": "Rave.",
+  "date": "2022-09-15 : 16:00:00",
+  "price": 120
+}
+
+### Delete
+DELETE http://localhost:3000/events/{{eventId}}
+
+###
+@eventId = {{ createEvent.response.body.id }}
+
+
+### SPOTS
+### GetAll
+GET http://localhost:3000/events/{{eventId}}/spots
+
+### GetById
+GET http://localhost:3000/events/{{eventId}}/spots/{{spotId}}
+
+### Create
+# @name createSpot
+POST http://localhost:3000/events/{{eventId}}/spots
+Content-Type: application/json
+
+{
+  "name": "A2"
+}
+
+### Update
+PATCH  http://localhost:3000/events/{{eventId}}/spots/{{spotId}}
+Content-Type: application/json
+
+{
+  "name": "A1"
+}
+
+### Delete
+DELETE http://localhost:3000/events/{{eventId}}/spots/{{spotId}}
+
+@spotId = {{ createSpot.response.body.id }}
+@spotName = {{ createSpot.response.body.name }}
+
+
+
+### RESERVES
+### Create
+POST http://localhost:3000/events/{{eventId}}/reserve
+Content-Type: application/json
+X-Api-Token: 123
+
+{
+  "spots": ["{{ spotName }}"],
+  "ticket_kind":"full",
+  "email": "test@test.com"
+}

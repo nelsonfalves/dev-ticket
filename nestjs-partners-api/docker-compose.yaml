@@ -1,0 +1,15 @@
+services:
+  nestjs:
+    build: .
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - .:/home/node/app
+
+  nestjs-mysql:
+    image: mysql:8.0.30-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./.docker/mysql:/docker-entrypoint-initdb.d

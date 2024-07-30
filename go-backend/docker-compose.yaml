@@ -7,16 +7,15 @@ services:
       - .:/app
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    command: sh -c "go mod tidy && go run cmd/events/main.go"
 
   golang-mysql:
     image: mysql:8.0.30-debian
-
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
       MYSQL_USER: test_user
       MYSQL_PASSWORD: test_password
-
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s

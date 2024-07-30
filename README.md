@@ -33,7 +33,7 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
        docker compose up
 
 ### Back-end
-1. No terminal, para acessar o container do back-end:
+1. Em um novo terminal, para acessar o container do back-end:
    
        docker compose exec golang sh
 

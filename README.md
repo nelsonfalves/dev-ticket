@@ -1,7 +1,7 @@
 # Sistema de Reserva de Tickets
 
 ## Descrição
-O projeto é uma aplicação de reserva de tickets, realizado na imersão FullCycle 18. O programa é composto por três partes principais: o front-end, feito utilizando o NextJS, o back-end em Golang, e uma API dos parceiros (que simula uma API de terceiros
+O projeto é uma aplicação de reserva de ingressos, realizado na imersão FullCycle 18. O programa é composto por três partes principais: o front-end, feito utilizando o NextJS, o back-end em Golang, e uma API dos parceiros (que simula uma API de terceiros
 se integrando com a aplicação) com o NestJS. Além disso o projeto foi feito utilizando o Docker e o Docker compose, permitindo que cada parte da aplicação funcione em um container próprio (incluindo containers para o banco de dados MySQL). Por fim, foi
 utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como Key Authentication para segurança.
 

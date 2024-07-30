@@ -38,7 +38,7 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
 
 2. No terminal, digite:
 
-   docker compose up
+       docker compose up
 
 Por fim, é possível acessar a aplicação pela URL:
 

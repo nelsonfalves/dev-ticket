@@ -94,7 +94,7 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
 
 Por fim, é possível acessar a aplicação pela URL:
 
-       http://localhost:8000/nextjs
+   ```http://localhost:8000/nextjs```
                     
 
 

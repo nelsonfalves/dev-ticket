@@ -6,14 +6,10 @@ services:
       - 3001:3001
     volumes:
       - .:/home/node/app
-    command: sh -c "npm install && \
-      npm run migrate:partner1 && \
-      npm run migrate:partner2 && \
-      npm run start partner1-fixture && \
-      npm run start partner2-fixture && \
-      npm run start:dev partner1 & \
-      npm run start:dev partner2 & \
-      wait"
+    command: sh -c "./entrypoint.sh"
+    depends_on:
+      nestjs-mysql:
+        condition: service_healthy
 
   nestjs-mysql:
     image: mysql:8.0.30-debian
@@ -21,3 +17,10 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./.docker/mysql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test:
+        ['CMD-SHELL', 'mysqladmin ping -h localhost -u root -proot --silent']
+      interval: 30s
+      retries: 10
+      start_period: 60s
+      timeout: 10s

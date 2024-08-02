@@ -17,7 +17,7 @@ npm run start partner2-fixture &&
 # Start the development servers
 npm run start:dev &
 
-sleep 10
+sleep 15
 
 npm run start:dev partner2
 

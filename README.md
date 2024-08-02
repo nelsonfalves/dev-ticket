@@ -36,10 +36,14 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
 
    /etc/hosts
 
-2. No terminal, digite:
+2. No terminal, para criar as imagens Docker, digite:
 
-       docker compose up
+   docker compose build
 
-Por fim, é possível acessar a aplicação pela URL:
+3. Por fim, ainda no terminal (para subir os containers):
+
+   docker compose up
+
+Agora já é possível acessar a aplicação pela URL:
 
 `http://localhost:8000/nextjs`

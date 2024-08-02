@@ -8,4 +8,4 @@ RUN npm install -g @nestjs/cli@10.3.2 && npm install @prisma/client
 
 USER node
 
-CMD tail -f /dev/null && npx prisma migrate dev
+CMD tail -f /dev/null

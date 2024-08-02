@@ -38,11 +38,11 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
 
 2. No terminal, para criar as imagens Docker, digite:
 
-   docker compose build
+       docker compose build
 
 3. Por fim, ainda no terminal (para subir os containers):
 
-   docker compose up
+       docker compose up
 
 Agora já é possível acessar a aplicação pela URL:
 

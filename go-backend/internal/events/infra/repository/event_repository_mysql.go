@@ -251,10 +251,10 @@ func (r *mysqlEventRepository) FindSpotByID(spotID string) (*domain.Spot, error)
 
 	if ticketID.Valid {
 		ticket.ID = ticketID.String
-		ticket.EventID = ticketEventID.String
-		ticket.Spot = &spot
-		ticket.TicketKind = domain.TicketKind(ticketKind.String)
-		ticket.Price = ticketPrice.Float64
+		_ = ticketEventID.String
+		_ = &spot
+		_ = domain.TicketKind(ticketKind.String)
+		_ = ticketPrice.Float64
 		spot.TicketID = ticket.ID
 	}
 
@@ -346,10 +346,10 @@ func (r *mysqlEventRepository) FindSpotByName(eventID, name string) (*domain.Spo
 
 	if ticketID.Valid {
 		ticket.ID = ticketID.String
-		ticket.EventID = ticketEventID.String
-		ticket.Spot = &spot
-		ticket.TicketKind = domain.TicketKind(ticketKind.String)
-		ticket.Price = ticketPrice.Float64
+		_ = ticketEventID.String
+		_ = &spot
+		_ = domain.TicketKind(ticketKind.String)
+		_ = ticketPrice.Float64
 		spot.TicketID = ticket.ID
 	}
 

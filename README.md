@@ -30,11 +30,11 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
 
    #### Windows:
 
-   C:\Windows\system32\drivers\etc\hosts (bloco de notas em modo administrador)
+   ```C:\Windows\system32\drivers\etc\hosts``` (bloco de notas em modo administrador)
 
    #### Linux ou Mac (Docker Desktop):
 
-   /etc/hosts
+   ```/etc/hosts```
 
 2. No terminal, para criar as imagens Docker, digite:
 

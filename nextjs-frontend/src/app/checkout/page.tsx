@@ -48,7 +48,7 @@ export default async function CheckoutPage() {
             year: "numeric",
           })}
         </p>
-        <p className="font-semibold text-white">{formatToCurrency(event.price)}</p>
+        <p className="font-semibold text-white">{formatToCurrency(totalPrice)}</p>
       </div>
       <div className="w-full max-w-[650px] rounded-2xl bg-secondary p-4">
         <Title>Payment Information</Title>

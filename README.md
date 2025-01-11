@@ -1,10 +1,8 @@
-# Sistema de Reserva de Tickets
+# Ticket Reservation System
 
-## Descrição
+## Description
 
-O projeto é uma aplicação de reserva de ingressos e é composto por três partes principais: o front-end, feito utilizando o NextJS, o back-end em Golang, e uma API dos parceiros (que simula uma API de terceiros
-se integrando com a aplicação) com o NestJS. Além disso o projeto foi feito utilizando o Docker e o Docker compose, permitindo que cada parte da aplicação funcione em um container próprio (incluindo containers para o banco de dados MySQL). Por fim, foi
-utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como Key Authentication para segurança.
+This project is a ticket reservation application consisting of three main components: the front-end built with Next.js, the back-end in Golang, and a partner API (simulating third-party integration) using NestJS. The project uses Docker and Docker Compose, allowing each part of the application to run in its own container (including MySQL database containers). Kong API Gateway integrates the project and provides plugins like Key Authentication for security.
 
 ## Tecnologias Utilizadas
 
@@ -24,26 +22,26 @@ utilizada a API Gateway Kong, para integrar o projeto e adicionar plugins como K
 
 ### Passos Gerais
 
-1. Adicione a seguinte linha ao arquivo hosts:
+1. Add the following line to the hosts file:
 
    `127.0.0.1 host.docker.internal`
 
    #### Windows:
 
-   ```C:\Windows\system32\drivers\etc\hosts``` (bloco de notas em modo administrador)
+   ```C:\Windows\system32\drivers\etc\hosts``` (edit with Administrator privileges)
 
    #### Linux ou Mac (Docker Desktop):
 
    ```/etc/hosts```
 
-2. No terminal, para criar as imagens Docker, digite:
+2. Build Docker images:
 
        docker compose build
 
-3. Por fim, ainda no terminal (para subir os containers):
+3. Start the containers::
 
        docker compose up
 
-Agora já é possível acessar a aplicação pela URL:
+Access the application at:
 
 `http://localhost:8000/nextjs`
